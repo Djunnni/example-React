@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>beforeunload test</title>
+    <style>
+      .image-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      figure {
+        border: 1px solid;
+      }
+      figcaption {
+        text-align: center;
+        border-top: 1px solid;
+      }
+      img {
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Test beforeunload event can allow your customMessage</p>
+    <p>you can find <a href="https://www.chromestatus.com/feature/5349061406228480">here</a> about chrome status </p>
+    <div class="image-container">
+      <figure>
+        <img src="./firefox.png" alt="firefox"/>
+        <figcaption>firefox</figcaption>
+      </figure>
+      <figure>
+        <img src="./chrome.png" alt="chrome"/>
+        <figcaption>chrome</figcaption>
+      </figure>
+      <figure>
+        <img src="./safari.png" alt="safari"/>
+        <figcaption>safari</figcaption>
+      </figure>
+    </div>
+    <script>
+      window.addEventListener("beforeunload", function (event) {
+        event.preventDefault();
+        // delete event['returnValue'];
+        event.returnValue = 'custom returnValue TEST!';
+        return 'custom returnValue TEST!';
+      });
+    </script>
+  </body>
+</html>
