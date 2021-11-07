@@ -1,0 +1,41 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.VoiceMeter {
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 100%;
+  border: none;
+
+  background-color: #1d6ce0;
+  width: 2rem;
+  height: 2rem;
+
+  transition: opacity 0.1s linear;
+}
+
+.VoiceMeter__Dot {
+  border-radius: 3px;
+  border: none;
+
+  width: 3px;
+  height: 3px;
+
+  background-color: #fff;
+
+  transition: height 0.05s linear;
+}
+
+.VoiceMeter__Dot__2 {
+  margin: 0 3px;
+}
